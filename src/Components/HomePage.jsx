@@ -8,7 +8,7 @@ function HomePage({ sideNavbar }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/allVideo")
+      .get("https://youtube-backend-9m2f.onrender.com/api/allVideo")
       .then((res) => {
         // console.log(res.data.videos);
         setData(res.data.videos);

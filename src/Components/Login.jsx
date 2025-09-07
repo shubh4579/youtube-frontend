@@ -19,9 +19,13 @@ function Login({ setLoginModal }) {
   const handleLogin = () => {
     setProgressBar(true);
     axios
-      .post("http://localhost:3000/auth/login", loginField, {
-        withCredentials: true,
-      })
+      .post(
+        "https://youtube-backend-9m2f.onrender.com/auth/login",
+        loginField,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         setProgressBar(false);
         localStorage.setItem("token", res.data.token);

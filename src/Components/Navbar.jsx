@@ -56,7 +56,11 @@ function Navbar({ setSideNavbarfunc, sideNavbar }) {
 
   const getLogoutFun = async () => {
     axios
-      .post("http://localhost:3000/auth/logout", {}, { withCredentials: true })
+      .post(
+        "https://youtube-backend-9m2f.onrender.com/auth/logout",
+        {},
+        { withCredentials: true }
+      )
       .then((res) => {
         console.log("logout");
       })
