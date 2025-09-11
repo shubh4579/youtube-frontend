@@ -7,12 +7,17 @@ import Video from "./Pages/Video";
 import Profile from "./Pages/Profile";
 import VideoUpload from "./Pages/VideoUpload";
 import SignUp from "./Pages/SignUp";
-import axios from "axios";
+
 import { useEffect } from "react";
 
 function App() {
   const [sideNavbar, setSideNavbar] = useState(true);
-
+  useEffect(() => {
+    // Ping backend to wake it up
+    fetch("https://youtube-backend-9m2f.onrender.com")
+      .then(() => console.log("Backend wake-up ping sent"))
+      .catch((err) => console.error("Backend not reachable", err));
+  }, []);
   // useEffect(() => {
   //   axios
   //     .get("http://localhost:3000/api/allVideo")
